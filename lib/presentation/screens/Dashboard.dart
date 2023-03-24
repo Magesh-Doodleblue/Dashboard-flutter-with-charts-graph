@@ -11,6 +11,37 @@ import 'piechart.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
+  openDialogBox(context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Expanded(
+          child: AlertDialog(
+            elevation: 20,
+            title: const Text('Search DialogBox'),
+            content: TextFormField(
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: "Type to search an Item",
+              ),
+              style: Theme.of(context).textTheme.bodyMedium,
+              onChanged: (value) {},
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {},
+                child: const Text('CANCEL'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('Search'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +62,9 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              openDialogBox(context);
+            },
             icon: const Icon(
               Icons.search,
               color: Colors.grey,
