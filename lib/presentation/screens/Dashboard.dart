@@ -29,12 +29,41 @@ class MainScreen extends StatelessWidget {
             ),
             actions: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: const Text('CANCEL'),
               ),
               TextButton(
                 onPressed: () {},
                 child: const Text('Search'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  notificationDialogBox(context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Expanded(
+          child: AlertDialog(
+            elevation: 20,
+            title: const Text('Notifications'),
+            content: const Text("No New Notifications in here"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('CANCEL'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('OK'),
               ),
             ],
           ),
@@ -74,7 +103,9 @@ class MainScreen extends StatelessWidget {
             width: 20,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              notificationDialogBox(context);
+            },
             icon: const Icon(
               Icons.notifications,
               color: Colors.grey,
