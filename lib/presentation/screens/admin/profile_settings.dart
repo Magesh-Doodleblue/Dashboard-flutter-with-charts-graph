@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'settings.dart';
+import '../../widgets/toast.dart';
 
 class SettingsUI extends StatelessWidget {
   const SettingsUI({super.key});
@@ -29,29 +29,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 1,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const SettingsPage()));
-            },
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      //   elevation: 1,
+      // ),
       body: Center(
         child: Container(
           width: 800,
@@ -147,7 +128,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               color: Colors.white)),
                     ),
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        openDialogBox(context);
+                      },
                       style: OutlinedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 50),
                         elevation: 2,
@@ -170,6 +153,36 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
         ),
       ),
+    );
+  }
+
+  openDialogBox(context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Expanded(
+          child: AlertDialog(
+            elevation: 20,
+            title: const Text('Save Info'),
+            content: const Text("Click Yes to save your info"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('CANCEL'),
+              ),
+              TextButton(
+                onPressed: () {
+                  var message = "Saved Information";
+                  showToast(message);
+                },
+                child: const Text('Yes'),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
