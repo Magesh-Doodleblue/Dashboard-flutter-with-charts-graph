@@ -93,7 +93,7 @@ class _SettingsPageState extends State<SettingsPage> {
               const SizedBox(
                 height: 10,
               ),
-              buildNotificationOptionRow("New for you", true),
+              buildNotificationOptionRow("New for you", false),
               buildNotificationOptionRow("Account activity", true),
               buildNotificationOptionRow("Opportunity", false),
               const SizedBox(
@@ -104,7 +104,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     elevation: 2,
-                    backgroundColor: Colors.green,
+                    backgroundColor: const Color.fromARGB(255, 255, 66, 66),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                   ),
@@ -113,9 +113,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   },
                   child: const Text("SIGN OUT",
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           letterSpacing: 2.2,
-                          color: Colors.black)),
+                          color: Colors.white)),
                 ),
               )
             ],
@@ -125,7 +125,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Row buildNotificationOptionRow(String title, bool isActive) {
+  Row buildNotificationOptionRow(String title, bool? isActive) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -139,8 +139,12 @@ class _SettingsPageState extends State<SettingsPage> {
         Transform.scale(
             scale: 0.7,
             child: CupertinoSwitch(
-              value: isActive,
-              onChanged: (bool val) {},
+              value: isActive = false,
+              onChanged: (bool val) {
+                setState(() {
+                  isActive = isActive!;
+                });
+              },
             ))
       ],
     );
