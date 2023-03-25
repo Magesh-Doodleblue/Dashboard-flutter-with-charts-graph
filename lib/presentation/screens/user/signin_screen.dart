@@ -198,7 +198,7 @@ class UserSigninScreen extends StatelessWidget {
                                     onPressed: () {
                                       _formKey.currentState!.save();
                                       if (_formKey.currentState!.validate()) {
-                                        Get.to(UserDashboard());
+                                        Get.to(() => UserDashboard());
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

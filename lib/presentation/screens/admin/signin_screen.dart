@@ -198,7 +198,7 @@ class AdminSigninScreen extends StatelessWidget {
                                     onPressed: () {
                                       _formKey.currentState!.save();
                                       if (_formKey.currentState!.validate()) {
-                                        Get.to(AdminDashboard());
+                                        Get.to(() => AdminDashboard());
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

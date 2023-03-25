@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:warpe_dashboard_task/presentation/screens/user/dashboard.dart';
 
-import 'screens/admin/signin_screen.dart';
 import 'screens/admin/splash_screen.dart';
 import 'screens/user/splash_screen.dart';
 
@@ -86,6 +86,26 @@ class FirstSplashScreen extends StatelessWidget {
                           ),
                         ),
                         child: const Text("Admin"),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 64,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Get.to(() => UserDashboard());
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 55, 125, 255),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        child: const Text("Guest"),
                       ),
                     ),
                     const SizedBox(

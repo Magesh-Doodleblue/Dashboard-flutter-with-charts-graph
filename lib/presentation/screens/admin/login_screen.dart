@@ -114,7 +114,7 @@ class AdminLoginScreen extends StatelessWidget {
                                     formKey.currentState!.save();
                                     if (formKey.currentState!.validate()) {
                                       // Get.to(const DashBoardUi());
-                                      Get.to(AdminDashboard());
+                                      Get.to(() => AdminDashboard());
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(
