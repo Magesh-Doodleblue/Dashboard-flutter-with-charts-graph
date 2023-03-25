@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:warpe_dashboard_task/presentation/screens/splash_screen.dart';
+
+import 'presentation/screens/admin/Dashboard.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -12,10 +13,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashScreen(),
-      home: SplashScreen(),
+      home: AdminDashboard(),
+      // home: FirstSplashScreen(),
+      // home: MainScreen(),
     );
   }
 }

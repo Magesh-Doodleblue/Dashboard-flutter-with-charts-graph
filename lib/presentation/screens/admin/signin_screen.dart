@@ -2,11 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:warpe_dashboard_task/presentation/screens/admin/dashboard.dart';
 
-import 'Dashboard.dart';
-
-class SigninScreen extends StatelessWidget {
-  SigninScreen({super.key});
+class AdminSigninScreen extends StatelessWidget {
+  AdminSigninScreen({super.key});
 
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -199,7 +198,7 @@ class SigninScreen extends StatelessWidget {
                                     onPressed: () {
                                       _formKey.currentState!.save();
                                       if (_formKey.currentState!.validate()) {
-                                        Get.to(const MainScreen());
+                                        Get.to(AdminDashboard());
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

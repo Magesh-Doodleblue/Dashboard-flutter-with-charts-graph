@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'donut_chart.dart';
-import 'Dashboard.dart';
+import 'admin/inventory_dashboard.dart';
 import 'inventory_items.dart';
 import 'total_inventory_items.dart';
 
@@ -14,16 +14,17 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: MediaQuery.of(context).size.width / 2.3,
+      width: MediaQuery.of(context).size.width / 3,
       child: ListView(
         shrinkWrap: true,
         children: [
           SizedBox(
             height: 100,
             child: DrawerHeader(
-                child: Image.asset(
-              "images/brand.png",
-            )),
+              child: Image.network(
+                "assets/BubbleTree.png",
+              ),
+            ),
           ),
           DrawerListTile(
             icon: Icons.home,

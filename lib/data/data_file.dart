@@ -4,7 +4,8 @@ final List<Course> course = [
   Course(
     text: "Item 1",
     lessons: "300 Items",
-    imageUrl: "images/pic/img1.png",
+    imageUrl:
+        "https://images.unsplash.com/photo-1545127398-14699f92334b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
     percent: 75,
     backImage: "images/box/box1.png",
     color: Colors.blue,
@@ -12,7 +13,8 @@ final List<Course> course = [
   Course(
     text: "Items",
     lessons: "40 Items",
-    imageUrl: "images/pic/img2.png",
+    imageUrl:
+        "https://images.unsplash.com/photo-1593081891731-fda0877988da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     percent: 50,
     backImage: "images/box/box2.png",
     color: Colors.orange,
@@ -20,7 +22,8 @@ final List<Course> course = [
   Course(
     text: "Items",
     lessons: "200 Items",
-    imageUrl: "images/pic/img3.png",
+    imageUrl:
+        "https://images.unsplash.com/photo-1557234424-db3778bd0346?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
     percent: 25,
     backImage: "images/box/box3.png",
     color: Colors.green,
@@ -28,7 +31,8 @@ final List<Course> course = [
   Course(
     text: "Items",
     lessons: "240 Items",
-    imageUrl: "images/pic/img4.png",
+    imageUrl:
+        "https://images.unsplash.com/photo-1586253634026-8cb574908d1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGl0ZW1zJTIwZWxlY3Ryb25pY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     percent: 75,
     backImage: "images/box/box4.png",
     color: Colors.yellow,

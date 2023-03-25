@@ -4,13 +4,13 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../data/data_file.dart';
-import 'drawer_dashboard.dart';
-import 'hierarchy.dart';
-import 'piechart.dart';
+import '../../../data/data_file.dart';
+import '../drawer_dashboard.dart';
+import '../hierarchy.dart';
+import '../piechart.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class UserMainScreen extends StatelessWidget {
+  const UserMainScreen({Key? key}) : super(key: key);
   openDialogBox(context) {
     showDialog(
       context: context,
@@ -90,6 +90,9 @@ class MainScreen extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+          const SizedBox(
+            width: 30,
+          ),
           IconButton(
             onPressed: () {
               openDialogBox(context);
@@ -100,7 +103,7 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 20,
+            width: 30,
           ),
           IconButton(
             onPressed: () {
@@ -173,44 +176,50 @@ class MainScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        CourseGrid(),
-                        SizedBox(
+                      children: [
+                        const CourseGrid(),
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           "Items in Inventory",
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
-                        StatisticsGrid(),
+                        const Text("Activity"),
+                        const StatisticsGrid(),
+                        const SizedBox(
+                          height: 28,
+                        ),
+                        const ActivityHeader(),
                         SizedBox(
-                          height: 280,
+                            width: 860, height: 400, child: BarChartContent()),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: const [
+                        PlaningGrid(),
+                        SizedBox(
+                          height: 220,
                         ),
                       ],
                     ),
                   ),
-                  const Expanded(flex: 1, child: PlaningGrid()),
                 ],
               ),
-              const ActivityHeader(),
-              Row(
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width / 2.2,
-                    height: MediaQuery.of(context).size.height / 2,
-                    child: ChartContainer(
-                      chart: BarChartContent(),
-                    ),
-                  ),
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.2,
-                      height: MediaQuery.of(context).size.height / 2,
-                      child: const PieDonutChart()),
-                ],
+              const SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 3,
+                height: MediaQuery.of(context).size.height / 2,
+                child: const PieDonutChart(),
               ),
             ],
           ),
@@ -288,10 +297,12 @@ class CourseGrid extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 28.0),
             child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(course[index].backImage),
-                    fit: BoxFit.fill),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Color.fromARGB(255, 226, 226, 226),
+                // image: DecorationImage(
+                //     image: AssetImage(course[index].backImage),
+                //     fit: BoxFit.fill),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -304,18 +315,18 @@ class CourseGrid extends StatelessWidget {
                       children: [
                         Text(
                           course[index].text,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 19),
                         ),
                         Text(
                           course[index].lessons,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ],
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
+                        Image.network(
                           course[index].imageUrl,
                           height: 110,
                         )
@@ -419,50 +430,6 @@ class PlaningGrid extends StatelessWidget {
   }
 }
 
-class PlaningHeader extends StatelessWidget {
-  const PlaningHeader({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: const [
-            Text(
-              "Planning ",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              "View All",
-              style: TextStyle(color: Colors.blue, height: 2),
-            )
-          ],
-        ),
-        Row(
-          children: const [
-            Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              "18 July 2022",
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  height: 2,
-                  fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ],
-    );
-  }
-}
-
 class StatisticsGrid extends StatelessWidget {
   const StatisticsGrid({Key? key}) : super(key: key);
 
@@ -483,7 +450,7 @@ class StatisticsGrid extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Colors.blue,
+              color: const Color.fromARGB(255, 230, 230, 230),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
@@ -500,14 +467,17 @@ class StatisticsGrid extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        height: 40,
+                        height: 60,
                         width: 7,
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(15)),
+                      ),
+                      const SizedBox(
+                        width: 8,
                       ),
                       Text(
                         statistics[index].number,
@@ -573,12 +543,10 @@ class BarChartContent extends StatelessWidget {
     return FlSpot(index.toDouble(), index * Random().nextDouble());
   });
 
-  // This will be used to draw the orange line
   final List<FlSpot> dummyData2 = List.generate(8, (index) {
     return FlSpot(index.toDouble(), index * Random().nextDouble());
   });
 
-  // This will be used to draw the blue line
   final List<FlSpot> dummyData3 = List.generate(8, (index) {
     return FlSpot(index.toDouble(), index * Random().nextDouble());
   });

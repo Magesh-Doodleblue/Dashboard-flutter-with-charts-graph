@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'login_screen.dart';
-import 'signin_screen.dart';
+import 'screens/admin/signin_screen.dart';
+import 'screens/admin/splash_screen.dart';
+import 'screens/user/splash_screen.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class FirstSplashScreen extends StatelessWidget {
+  const FirstSplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +43,20 @@ class SplashScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    Text(
+                      "Select a Good way to\nLogin",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[700]),
+                    ),
                     const SizedBox(height: 32),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       height: 64,
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.to(() => LoginScreen());
+                          Get.to(() => const UserSplashScreen());
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
@@ -57,7 +65,7 @@ class SplashScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16),
                           ),
                         ),
-                        child: const Text("Login"),
+                        child: const Text("User"),
                       ),
                     ),
                     const SizedBox(
@@ -68,7 +76,7 @@ class SplashScreen extends StatelessWidget {
                       height: 64,
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.to(() => SigninScreen());
+                          Get.to(() => const AdminSplashScreen());
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
@@ -77,7 +85,7 @@ class SplashScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16),
                           ),
                         ),
-                        child: const Text("Signin"),
+                        child: const Text("Admin"),
                       ),
                     ),
                     const SizedBox(
