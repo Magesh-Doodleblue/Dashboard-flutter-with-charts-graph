@@ -4,9 +4,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 void showToast(String message) {
   Fluttertoast.showToast(
       msg: message,
+      fontSize: 23,
+      webBgColor: Colors.black,
+      webPosition: Center,
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.red,
-      textColor: Colors.yellow);
+      timeInSecForIosWeb: 2,
+      backgroundColor: Colors.black,
+      textColor: Colors.white);
 }
