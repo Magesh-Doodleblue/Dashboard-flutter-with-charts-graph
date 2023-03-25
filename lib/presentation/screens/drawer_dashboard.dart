@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'Job_portal/job_master.dart';
+import 'admin/profile_settings.dart';
 import 'donut_chart.dart';
 import 'admin/inventory_dashboard.dart';
 import 'inventory_items.dart';
@@ -65,7 +66,9 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             icon: Icons.settings,
             title: "Settings",
-            onTap: () {},
+            onTap: () {
+              Get.to(() => const SettingsUI());
+            },
           ),
           const SizedBox(
             height: 10,
