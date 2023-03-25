@@ -1,8 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:warpe_dashboard_task/presentation/screens/admin/profile_settings.dart';
-
 import '../toast.dart';
 
 class AppBarActionItems extends StatelessWidget {
