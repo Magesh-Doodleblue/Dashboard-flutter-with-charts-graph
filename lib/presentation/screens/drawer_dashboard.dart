@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'Job_portal/job_master.dart';
 import 'admin/profile_settings.dart';
+import 'admin/settings.dart';
 import 'donut_chart.dart';
 import 'admin/inventory_dashboard.dart';
 import 'inventory_items.dart';
@@ -36,14 +37,14 @@ class SideMenu extends StatelessWidget {
             },
           ),
           DrawerListTile(
-            icon: Icons.menu,
+            icon: Icons.inventory,
             title: "Inventory",
             onTap: () {
               Get.to(() => const MainScreen());
             },
           ),
           DrawerListTile(
-            icon: Icons.menu,
+            icon: Icons.inventory_2_outlined,
             title: "Items Monitoring",
             onTap: () {
               Get.to(() => const InventoryItems());
@@ -61,6 +62,13 @@ class SideMenu extends StatelessWidget {
             title: "Available Jobs in Portal",
             onTap: () {
               Get.to(() => const JobMaster());
+            },
+          ),
+          DrawerListTile(
+            icon: Icons.person_2_outlined,
+            title: "Profile",
+            onTap: () {
+              Get.to(() => const SettingsPage());
             },
           ),
           DrawerListTile(
