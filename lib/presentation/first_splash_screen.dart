@@ -14,11 +14,12 @@ class FirstSplashScreen extends StatelessWidget {
       body: Center(
         child: Stack(
           children: [
-            Image.asset("assets/Vector.png"),
+            Center(
+              child: Image.asset("assets/Vector.png"),
+            ),
             Center(
               child: SizedBox(
                 width: 400,
-                height: 400,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

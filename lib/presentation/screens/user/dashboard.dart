@@ -45,11 +45,11 @@ class UserDashboard extends StatelessWidget {
           children: [
             if (Responsive.isDesktop(context))
               const Expanded(
-                flex: 1,
+                flex: 2,
                 child: SideMenu(),
               ),
             Expanded(
-              flex: 10,
+              flex: 6,
               child: SafeArea(
                 child: SingleChildScrollView(
                   padding:
@@ -155,7 +155,7 @@ class UserDashboard extends StatelessWidget {
             ),
             if (Responsive.isDesktop(context))
               Expanded(
-                flex: 4,
+                flex: 2,
                 child: SafeArea(
                   child: Container(
                     width: double.infinity,
