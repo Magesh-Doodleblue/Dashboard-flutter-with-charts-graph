@@ -141,9 +141,11 @@ class _SettingsPageState extends State<SettingsPage> {
             child: CupertinoSwitch(
               value: isActive = false,
               onChanged: (bool val) {
-                setState(() {
-                  isActive = isActive!;
-                });
+                setState(
+                  () {
+                    isActive = isActive!;
+                  },
+                );
               },
             ))
       ],
