@@ -14,24 +14,24 @@ class PaymentDetailList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SizedBox(
-        height: SizeConfig.blockSizeVertical! * 5,
-      ),
-      Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.grey,
-                blurRadius: 15.0,
-                offset: Offset(
-                  10.0,
-                  15.0,
-                ),
-              )
-            ]),
-        child: Image.asset('assets/card.png'),
-      ),
+      // SizedBox(
+      //   height: SizeConfig.blockSizeVertical! * 5,
+      // ),
+      // Container(
+      //   decoration: BoxDecoration(
+      //       borderRadius: BorderRadius.circular(30),
+      //       boxShadow: const [
+      //         BoxShadow(
+      //           color: Colors.grey,
+      //           blurRadius: 15.0,
+      //           offset: Offset(
+      //             10.0,
+      //             15.0,
+      //           ),
+      //         )
+      //       ]),
+      //   child: Image.asset('assets/card.png'),
+      // ),
       SizedBox(
         height: SizeConfig.blockSizeVertical! * 5,
       ),

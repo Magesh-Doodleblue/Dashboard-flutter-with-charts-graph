@@ -5,11 +5,11 @@ import '../../widgets/component/header.dart';
 import '../../widgets/component/historyTable.dart';
 import '../../widgets/component/infoCard.dart';
 import '../../widgets/component/paymentDetailList.dart';
-import '../../widgets/component/sideMenu.dart';
 import '../../widgets/responsive.dart';
 import '../../widgets/style/colors.dart';
 import '../../widgets/style/size_config.dart';
 import '../../widgets/style/style.dart';
+import '../drawer_dashboard.dart';
 
 class AdminDashboard extends StatelessWidget {
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
@@ -45,7 +45,7 @@ class AdminDashboard extends StatelessWidget {
           children: [
             if (Responsive.isDesktop(context))
               const Expanded(
-                flex: 1,
+                flex: 3,
                 child: SideMenu(),
               ),
             Expanded(

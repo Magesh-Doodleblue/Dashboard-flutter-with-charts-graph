@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/data_file.dart';
-import '../drawer_dashboard.dart';
+import '../Inventory_drawer.dart';
 import '../hierarchy.dart';
 import '../piechart.dart';
 
@@ -126,7 +126,7 @@ class UserMainScreen extends StatelessWidget {
           ),
         ],
       ),
-      drawer: const SideMenu(),
+      drawer: const InventorySideMenu(),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(

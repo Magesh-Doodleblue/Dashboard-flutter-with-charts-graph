@@ -6,8 +6,8 @@ import 'admin/inventory_dashboard.dart';
 import 'inventory_items.dart';
 import 'total_inventory_items.dart';
 
-class SideMenu extends StatelessWidget {
-  const SideMenu({
+class InventorySideMenu extends StatelessWidget {
+  const InventorySideMenu({
     Key? key,
   }) : super(key: key);
 
@@ -31,13 +31,6 @@ class SideMenu extends StatelessWidget {
             title: "Overview",
             onTap: () {
               Get.to(() => PieChartUI());
-            },
-          ),
-          DrawerListTile(
-            icon: Icons.menu,
-            title: "Inventory",
-            onTap: () {
-              Get.to(() => const MainScreen());
             },
           ),
           DrawerListTile(
